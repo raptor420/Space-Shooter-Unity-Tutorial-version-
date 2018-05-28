@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour {
 
 public Text scoreText;
+    public Text highscore;
 public GameObject[] Hazards;
 public Vector3 spawnValues;
 public int hazardcount;
@@ -43,6 +44,7 @@ yield return new WaitForSeconds(wavewait);
 }
 }
 void Start () {
+        highscore.text =  "HIGH SCORE " + PlayerPrefs.GetInt("HighScore", 0).ToString();
     gameOver = false;
     Restart = false;
 StartCoroutine (spawnwaves());
@@ -54,6 +56,12 @@ public  void updateScore()
 score= score +ScorePoint;
 scoreText.text = "Score " + score;
 
+        if (score > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+
+            highscore.text = "HIGH SCORE " + PlayerPrefs.GetInt("HighScore").ToString();
+        }
 
 
 }
