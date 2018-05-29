@@ -5,13 +5,13 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
-
-public Text scoreText;
+   
+    public Text scoreText;
     public Text highscore;
 public GameObject[] Hazards;
 public Vector3 spawnValues;
 public int hazardcount;
-     
+        
 public float spawnrate;
 public float startwait;
 public float wavewait;
@@ -33,8 +33,12 @@ for (int i = 0; i < hazardcount; i++)
 Vector3 spawnposition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
 Quaternion spawnrotation = Quaternion.identity;
 Instantiate(Hazard, spawnposition, spawnrotation);
-yield return new WaitForSeconds(spawnrate);
-}
+
+               
+                yield return new WaitForSeconds(spawnrate);
+               
+            }
+
 yield return new WaitForSeconds(wavewait);
             if (gameOver)
             {
@@ -51,9 +55,9 @@ StartCoroutine (spawnwaves());
 scoreText.text = "Score " + 0;
 
 }
-public  void updateScore()
+public  void updateScore(int points)
 {
-score= score +ScorePoint;
+score= score +points;
 scoreText.text = "Score " + score;
 
         if (score > PlayerPrefs.GetInt("HighScore", 0))

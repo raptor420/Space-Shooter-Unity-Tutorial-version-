@@ -160,6 +160,7 @@ MonoBehaviour:
   - {fileID: 1916157949663606, guid: 65762fcea9f6c6d44bb1ff84d65b2700, type: 2}
   - {fileID: 1286328569159898, guid: d033d96b9c8fb2e4086afa2571bb4675, type: 2}
   - {fileID: 1150051894872624, guid: ca3099f5e175a6c4f8d2c704f8f73283, type: 2}
+  - {fileID: 1244963081640998, guid: e0087204cc4fc154ea878bf3c611be39, type: 2}
   spawnValues: {x: 6, y: 0, z: 18}
   hazardcount: 10
   spawnrate: 0.5
@@ -1152,7 +1153,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d9808401c68af274a8edfbed3d1b53c7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9808401c68af274a8edfbed3d1b53c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

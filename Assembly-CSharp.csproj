@@ -56,6 +56,7 @@
      <Compile Include="Assets\Assets\Scripts\DestroybyBoundary.cs" />
      <Compile Include="Assets\Assets\Scripts\DestroybyContact.cs" />
      <Compile Include="Assets\Assets\Scripts\Destroybytime.cs" />
+     <Compile Include="Assets\Assets\Scripts\EnemyShipControl.cs" />
      <Compile Include="Assets\Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Assets\Scripts\Mover_bolt.cs" />
      <Compile Include="Assets\Assets\Scripts\PlayerController.cs" />

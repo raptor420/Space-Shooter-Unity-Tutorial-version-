@@ -7,6 +7,7 @@ public class DestroybyContact : MonoBehaviour {
     public GameObject explosion;
     public GameObject player;
     private GameController gamecontroller;
+    public int  points;
 
 
     void Start()
@@ -28,14 +29,20 @@ public class DestroybyContact : MonoBehaviour {
     }
    void  OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
-        if(other.tag == "Boundary")
+       // Debug.Log(other.tag);
+        if(other.CompareTag ("Boundary") || other.CompareTag ("enemy") )
         {
             return;
 
 
         }
-        Instantiate(explosion, transform.position, transform.rotation);
+        
+        if(explosion != null)
+        {
+            Instantiate(explosion, transform.position, transform.rotation);
+
+        }
+        
         if (other.tag == "Player")
         {
             Instantiate(player, other.transform.position, other.transform.rotation);//player des animation
@@ -43,7 +50,7 @@ public class DestroybyContact : MonoBehaviour {
         }
         Destroy(other.gameObject);
         Destroy(gameObject);
-        gamecontroller.updateScore();
+        gamecontroller.updateScore(points);
         
     }
 }

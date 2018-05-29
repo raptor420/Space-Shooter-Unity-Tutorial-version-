@@ -15,11 +15,11 @@ public class BGScroll : MonoBehaviour {
 	void Update () {
 
         float newPos = Mathf.Repeat(Time.time * scrollspeed, tilesize);
-        Debug.Log(Time.time * scrollspeed);
+        //Debug.Log(Time.time * scrollspeed);
         //Debug.Log( newPos);
         //Debug.Log(Vector3.forward);
         transform.position = StartPos + Vector3.forward * newPos;
-        Debug.Log("start pos " + StartPos);
+        //Debug.Log("start pos " + StartPos);
 
 	}
 }
